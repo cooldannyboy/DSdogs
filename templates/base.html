@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {%  endblock %}</title>
+    <link rel="stylesheet" href="/static/css/DSdogs.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+            <img src="/static/images/logo.png">
+            </a>
+        </div>
+
+        <div class="user_login">
+            <a href="">登入</a>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <nav>
+        <a href="">New Arrival</a>
+        <a href="">Hot</a>
+        <a href="">On Sale</a>
+        <a href="">Top</a>
+        <a href="">Paints</a>
+    </nav>
+    <h2>{% block h2 %} {% endblock %}</h2>
+    {% block content %}{% endblock %}
+
+</body>
+</html>
