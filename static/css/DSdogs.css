@@ -1,11 +1,32 @@
 body {
-
 	margin:0 auto;
-	width:1200px;
+	width:90%;
+	max-width:1200px;
 	padding:0 10px;
 	overflow:auto;
 }
 
+/*連結去底線*/
+a {
+    text-decoration:none;
+    color:black;
+}
+
+nav {
+	/*margin:0 auto;*/
+	width:1200px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+/*  inline cannot set width
+    display: inline;
+*/
+    float: left;
+}
 
 /*
 body {
@@ -34,6 +55,6 @@ body {
 
 
 .line {
-    border-bottom:solid
+    border-bottom:solid #e5e5e5
 }
 
