@@ -55,6 +55,16 @@ body {
 
 
 .line {
-    border-bottom:solid #e5e5e5
+    border-bottom:solid #e5e5e5;
+}
+
+
+.product-name {
+    font-size: 16px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
 }
 

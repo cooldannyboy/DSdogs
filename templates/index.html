@@ -2,7 +2,27 @@
 
 
 {% block content %}
-    {% for p in products %}
-        <img src="{{ p.image.url }}">
-    {% endfor %}
+
+        <div class="container-fluid">
+            <h1>TEST</h1>
+            <div class="row">
+                {% for p in products %}
+                <div class="col-md-3">
+                    <img src="{{ p.image.url }}" width="100%">
+                    <div class="product-info">
+                        <div class="product-name">
+                            {{ p.name }}
+                        </div>
+
+                        <div class="product-price">
+                            ${{ p.price }}
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
 {% endblock %}
