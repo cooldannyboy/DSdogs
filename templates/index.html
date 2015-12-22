@@ -8,7 +8,9 @@
             <div class="row">
                 {% for p in products %}
                 <div class="col-md-3">
+                    <a href="product/{{p.id}}">
                     <img src="{{ p.image.url }}" width="100%">
+                    </a>
                     <div class="product-info">
                         <div class="product-name">
                             {{ p.name }}
