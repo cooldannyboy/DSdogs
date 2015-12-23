@@ -2,7 +2,17 @@
 
 
 {% block content %}
-
+    <div class="product_info_img">
         <img src="{{ p.image.url }}">
+    </div>
+    <div class="product_detail">
+        <div class="product_detail_name">
+            {{p.name}}
+        </div>
+        <div class="product_detail_price">
+            Price <span>${{p.price}}</span>
+        </div>
+    </div>
+
 
 {% endblock %}

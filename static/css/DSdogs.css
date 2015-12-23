@@ -1,7 +1,7 @@
 body {
 	margin:0 auto;
 	width:90%;
-	max-width:1200px;
+	max-width:1000px;
 	padding:0 10px;
 	overflow:auto;
 }
@@ -53,6 +53,10 @@ body {
     float: right;
 }
 
+.product_info_img {
+    float: left;
+    margin: 0 50px 0 0;
+}
 
 .line {
     border-bottom:solid #e5e5e5;
@@ -68,3 +72,10 @@ body {
     font-weight: bold;
 }
 
+.product_detail_name {
+    font-size: 32px;
+}
+
+.product_detail_price {
+    font-size: 24px;
+}
