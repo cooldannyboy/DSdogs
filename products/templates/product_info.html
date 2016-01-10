@@ -12,7 +12,17 @@
         <div class="product_detail_price">
             Price <span>${{p.price}}</span>
         </div>
+
+        <form action="../cart/" method="post"> {% csrf_token %}
+            <div class="add_to_cart">
+            <input type="submit" value="add to cart">
+            <input type="hidden" name="product_id" value="{{p.id}}">
+         <!--   <input type="hidden" name="next" value="/cart/" /> -->
+            </div>
+        </form>
+
     </div>
 
 
 {% endblock %}
+
