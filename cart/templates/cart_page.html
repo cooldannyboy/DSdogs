@@ -7,13 +7,73 @@
 <h1>Here is cart page</h1>
 <h2>cart id = {{cart.id}}</h2>
 
-{% if cart.item_set.all %}
-<p>total has {{cart.item_set.all|length}} item in cart</p>
+{% if items %}
+<p>total has {{items|length}} item in cart</p>
+
+<div class="cart_page">
+
+    <table class="table table-strped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th></th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <td width = "120">
+                <a href="/product/{{item.product.id}}">
+                <img src="{{item.product.image.url}}" height="100" wdith="100">
+                </a>
+            </td>
+
+            <td>
+                <div id="cart_product_name">
+                    <a href="/product/{{item.product.id}}">
+                        {{item.product.name}}
+                    </a>
+                </div>
+            </td>
+
+            <td>
+                 <div class="cart_price">
+                    ${{item.unit_price}}
+                 </div>
+            </td>
+
+            <td>
+                <div class="cart_quantity">
+                    {{item.quantity}}
+                </div>
+            </td>
+
+            <td width = "20">
+                <div class="item_delete">
+                    <form action="" method="post"> {% csrf_token%}
+                        <input  type="submit" value="Delete">
+                        <input type="hidden" name="del_item_id" value="{{item.id}}">
+                    </form>
+                </div>
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="cart_subtotal">
+        Subtotal:  <span class="cart_price">${{subtotal}}</span>
+    </div>
+
+
+</div>
+
+{% else %}
+<p>Your cart is empty</p>
 {% endif %}
-
-{% for item in items %}
-    product = {{item.product.name}}, quantity = {{item.quantity}}, total = {{item.total_price}} </br>
-{% endfor %}
-
 
 {% endblock %}

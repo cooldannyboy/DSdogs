@@ -53,6 +53,10 @@ body {
     float: right;
 }
 
+.cart_logo {
+    float: right;
+}
+
 .product_info_img {
     float: left;
     margin: 0 50px 0 0;
@@ -78,4 +82,63 @@ body {
 
 .product_detail_price {
     font-size: 24px;
+}
+
+.product_detail_price span{
+    font-size: 20px;
+    color: #B12704;
+}
+
+/*
+.cart_page {
+    font-size: 20px;
+}
+*/
+
+#cart_product_name a {
+    font-family:Microsoft JhengHei;
+    font-size: 20px;
+    color: #0066C0;
+}
+
+#cart_product_name a:hover {
+    font-family:Microsoft JhengHei;
+    font-size: 20px;
+    color: orange;
+}
+
+
+.cart_price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #B12704;
+}
+
+.cart_quantity {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart_delete {
+    font-family:Microsoft JhengHei;
+    font-size: 14px;
+    color: black;
+}
+
+.cart_subtotal {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item_delete input[type=submit] {
+    background: none;
+    border: 0px none;
+    color:#0066C0;
+}
+
+.item_delete input[type=submit]:hover{
+    background: none;
+    border: 0px none;
+    color: orange;
 }

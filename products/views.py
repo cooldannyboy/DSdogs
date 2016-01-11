@@ -7,6 +7,7 @@ def product_info(request, id):
     p = Product.objects.get(id=id)
 
     return render_to_response('product_info.html', RequestContext(request, locals()));
+    # return render_to_response('product_info.html', locals());
 
 # def product_info(request, name):
 #     p = Product.objects.get(name=name)

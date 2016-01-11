@@ -8,12 +8,18 @@ def cart_page(request):
     cart = get_cart(request)
     items = cart.item_set.all()
 
-    id = request.POST['product_id']
-    product = Product.objects.get(id=id)
-    add_to_cart(request, product=product, quantity=1, unit_price=product.price)
+    if 'del_item_id' in request.POST:
+        try:
+            items.get(id=request.POST['del_item_id']).delete()
+        except:
+            pass
+
+    subtotal = 0
+    for item in items:
+        subtotal += item.total_price
 
     return render_to_response('cart_page.html', RequestContext(request, locals()))
-
+    # return render_to_response('cart_page.html', locals())
 
 CART_ID = '_DS_CART_ID_'
 
@@ -32,6 +38,7 @@ def get_cart(request):
 
 def create_new_cart(request):
     cart = Cart.objects.create(created_date = datetime.datetime.now())
+    cart.set_total_count(0)
     request.session[CART_ID] = cart.id
     return cart
 

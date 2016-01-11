@@ -17,3 +17,15 @@ class Item(models.Model):
         return self.quantity*self.unit_price
 
     total_price = property(get_total_price)
+
+
+# class Order(models.Model):
+#     created_date = models.DateTimeField()
+#     cart = models.ForeignKey(Cart)
+#     user_name = models.CharField(max_length=20)
+#     email = models.EmailField()
+#     phone_number = models.CharField(max_length=20)
+#     address = models = models.CharField(max_length=255)
+#     claim_paid = models.BooleanField(default=False)
+#     check_paid = models.BooleanField(default=False)
+#     memo = models.TextField(max_length=255, blank=True)
