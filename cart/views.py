@@ -38,7 +38,6 @@ def get_cart(request):
 
 def create_new_cart(request):
     cart = Cart.objects.create(created_date = datetime.datetime.now())
-    cart.set_total_count(0)
     request.session[CART_ID] = cart.id
     return cart
 
@@ -47,10 +46,11 @@ def add_to_cart(request, product, quantity, unit_price):
 
     try:
         item = Item.objects.get(cart=cart, product=product)
-        item.quantity += quantity
+        item.quantity = item.quantity + quantity
         item.save()
     except:
         Item.objects.create(cart=cart, product=product, quantity=quantity, unit_price=unit_price)
+
 
 def remove_from_cart(request, product):
     cart = get_cart(request)

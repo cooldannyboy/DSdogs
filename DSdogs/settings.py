@@ -104,3 +104,7 @@ TEMPLATE_DIRS = (
 from django.conf import global_settings
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ("DSdogs.view.context_proc",)
+
+AUTHENTICATION_BACKENDS = global_settings.AUTHENTICATION_BACKENDS + (
+    'DSdogs.backend.EmailAuthBackend',
+ )
