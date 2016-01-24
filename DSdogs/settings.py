@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'cart'
+    'cart',
+    'accounts'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,6 +106,13 @@ from django.conf import global_settings
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + ("DSdogs.view.context_proc",)
 
-AUTHENTICATION_BACKENDS = global_settings.AUTHENTICATION_BACKENDS + (
-    'DSdogs.backend.EmailAuthBackend',
- )
+AUTH_USER_MODEL = 'accounts.CustomerUser'
+# AUTHENTICATION_BACKENDS = global_settings.AUTHENTICATION_BACKENDS + (
+AUTHENTICATION_BACKENDS = (
+    # 'django.contrib.auth.backends.RemoteUserBackend',
+    'accounts.backends.EmailAuthBackend',
+)
+
+# AUTHENTICATION_BACKENDS = global_settings.AUTHENTICATION_BACKENDS + (
+#     'DSdogs.backend.EmailAuthBackend',
+#  )
